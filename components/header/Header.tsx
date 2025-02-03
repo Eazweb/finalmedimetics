@@ -27,9 +27,9 @@ const Header = () => {
           >
             <Image
               src="/logo.png"
-              className=""
-              width={80}
-              height={80}
+              className="w-32 h-auto"
+              width={400}
+              height={400}
               alt=""
             />
           </Link>

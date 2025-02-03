@@ -8,9 +8,9 @@ const page = () => {
       </h1>
       <p className="text-lg text-gray-600 mt-5 font-thin">
         These terms and conditions outline the rules and regulations for the use
-        of Lift Lock's Website, located at liftlock.in. By accessing this
+        of Medimetics' Website, located at https://www.realmedimetics.in/ or https://www.realmedimetics.com/ . By accessing this
         website we assume you accept these terms and conditions. Do not continue
-        to use liftlock.in if you do not agree to take all of the terms and
+        to use https://www.realmedimetics.in/ or https://www.realmedimetics.com/ if you do not agree to take all of the terms and
         conditions stated on this page. The following terminology applies to
         these Terms and Conditions, Privacy Statement and Disclaimer Notice and
         all Agreements: "Client", "You" and "Your" refers to you, the person log
@@ -26,13 +26,12 @@ const page = () => {
         capitalization and/or he/she or they, are taken as interchangeable and
         therefore as referring to same.
       </p>
-
       <h1 className="text-xl font-semibold my-8">License</h1>
       <p className="font-thin text-zinc-600 text-lg mb-16">
-        Unless otherwise stated, Lift Lock and/or its licensors own the
-        intellectual property rights for all material on liftlock.in. All
+        Unless otherwise stated, Medimetics and/or its licensors own the
+        intellectual property rights for all material on https://www.realmedimetics.in/ or https://www.realmedimetics.com/. All
         intellectual property rights are reserved. You may access this from
-        liftlock.in for your own personal use subjected to restrictions set in
+        https://www.realmedimetics.in/ or https://www.realmedimetics.com/ for your own personal use subjected to restrictions set in
         these terms and conditions.
       </p>
     </div>

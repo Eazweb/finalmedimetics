@@ -4,9 +4,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image"; // Use next/image for optimized image loading
-import Banner1 from "../public/banners/Banner1.png";
-import Banner2 from "../public/banners/Banner2.png";
-import Banner3 from "../public/photos/photo2.jpg";
+import Banner1 from "../public/banners/poster1.png";
+import Banner2 from "../public/banners/poster2.png";
 
 function AutoPlayMethods() {
   let sliderRef = useRef(null);
@@ -20,10 +19,10 @@ function AutoPlayMethods() {
     autoplaySpeed: 2000,
   };
 
-  const banners = [Banner1, Banner2, Banner3]; // Array of images
+  const banners = [Banner1, Banner2]; // Array of images
 
   return (
-    <div className="slider-container gap-0 w-[90%] max-h-[500px] mx-auto py-10 rounded-xl overflow-hidden">
+    <div className="slider-container gap-0 md:w-[90%] max-w-[1100px] aspect-[16/9] mx-auto py-10 rounded-full overflow-hidden">
       <Slider ref={(slider: any) => (sliderRef = slider)} {...settings}>
         {banners.map((banner, index) => (
           <div

@@ -15,13 +15,18 @@ const page = () => {
         <br />
         <span className="font-semibold">
           {" "}
-          Delivery timeline - 7 days
+          Delivery timeline - <br /> 3-5 days in India <br /> 9-11 days outside
+          India
         </span>{" "}
         <br />
-        <span className="font-semibold"> Delivery Charges - INR 100</span>
+        <br />
+        <div className="font-semibold">
+          {" "}
+          Delivery Charges - <br /> INR 50 in India <br /> INR 2650/Kg for
+          outside India{" "}
+        </div>
         <br />
         <br />
-        For orders outside India
       </p>
 
       <p className="text-lg font-thin mt-4">
@@ -29,7 +34,7 @@ const page = () => {
         You can contact us by sending us an email:{" "}
         <span className="font-semibold"> liftlockbelts@gmail.com</span> or by
         calling on our support number :{" "}
-        <span className="font-semibold">+91 90565 06403</span>
+        <span className="font-semibold">+91 9115557179</span>
       </p>
     </div>
   );

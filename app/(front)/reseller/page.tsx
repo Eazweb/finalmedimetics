@@ -11,11 +11,11 @@ const ResellerPage = () => {
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       {/* Hero Section */}
       <section className="relative my-10 flex items-center justify-center">
-        <img
+        {/* <img
           src="/api/placeholder/1920/1080"
           alt="Skincare Products"
           className="absolute inset-0 w-full h-full object-cover brightness-50"
-        />
+        /> */}
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6">
             Become a Medimetics Reseller

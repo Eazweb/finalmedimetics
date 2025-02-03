@@ -30,12 +30,11 @@ export default async function Home() {
       <CarouselBanner />
       <div className="w-[90%] mx-auto h-auto mt-5">
         <Problems />
-        <h2
-          className={` ${headingFont.className}  text-center font-semibold my-5 py-5`}
-        >
-         <h1 className="text-3xl md:text-4xl lg:text-4xl">Best Sellers</h1>  <br />{" "}
-          <h1 className="text-md">Explore our best selling products</h1>
-        </h2>
+        <div className="text-center font-semibold my-5 py-5 flex flex-col gap-2">
+          <h1 className="text-primary text-3xl md:text-4xl lg:text-4xl">Best Sellers</h1>
+          <h2 className="text-md text-gray-400">Explore our best selling products</h2>
+        </div>
+
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 my-10">
           {latestProducts.map((product) => (
             <ProductItem
