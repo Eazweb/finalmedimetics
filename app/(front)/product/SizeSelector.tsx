@@ -104,7 +104,7 @@ export default function ClientSideProductDetails({
       </div>
 
       {/* File Upload for Custom Image */}
-      <div className="mb-8">
+      {/* <div className="mb-8">
         <label htmlFor="imageUpload" className="font-semibold text-lg block">
           Upload Your Custom Design:
         </label>
@@ -131,7 +131,7 @@ export default function ClientSideProductDetails({
           )}
           <h1>( ₹500 extra fee for customisation )</h1>
         </div>
-      </div>
+      </div> */}
 
       {product.countInStock !== 0 && (
         <div

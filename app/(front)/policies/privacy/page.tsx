@@ -5,7 +5,7 @@ const page = () => {
     <div className="w-[90%] mx-auto max-w-[600px] min-h-screen mb-16">
       <h1 className="text-4xl  text-center mt-10">Privacy Policy</h1>
       <p className="text-lg font-thin mt-5">
-        Last Updated: 18th September, 2024
+        Last Updated: 3rd February, 2025
       </p>
       <p className="mt-5 text-lg font-thin">
         This Privacy Policy describes Our policies and procedures on the

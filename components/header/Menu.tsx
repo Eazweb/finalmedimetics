@@ -6,7 +6,13 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { SearchBox } from "./SearchBox";
-import { ChevronDown, ShoppingCartIcon, Square, User } from "lucide-react";
+import {
+  ChevronDown,
+  Heart,
+  ShoppingCartIcon,
+  Square,
+  User,
+} from "lucide-react";
 import { usePathname } from "next/navigation";
 
 const Menu = () => {
@@ -37,9 +43,9 @@ const Menu = () => {
         </div>
       )} */}
       <div>
-        <ul className="flex gap-2 items-center">
+        <ul className="flex gap-5 justify-center items-center">
           <li>
-            <Link className="btn btn-ghost rounded-btn relative" href="/cart">
+            <Link className="relative cursor-pointer" href="/cart">
               <button>
                 <ShoppingCartIcon />
                 {mounted && items.length != 0 && (
@@ -50,11 +56,18 @@ const Menu = () => {
               </button>
             </Link>
           </li>
+          <li>
+            <Link className="relative cursor-pointer" href="/wishlist">
+              <button>
+                <Heart />
+              </button>
+            </Link>
+          </li>
           {session && session.user ? (
             <>
               <li>
                 <div className="dropdown dropdown-bottom dropdown-end">
-                  <label tabIndex={0} className="btn btn-ghost rounded-btn">
+                  <label tabIndex={0} className="cursor-pointer">
                     <User />
                   </label>
                   <ul
@@ -85,7 +98,7 @@ const Menu = () => {
           ) : (
             <li>
               <button
-                className="btn btn-ghost rounded-btn"
+                className=""
                 type="button"
                 onClick={() => signIn()}
               >

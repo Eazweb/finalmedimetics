@@ -31,6 +31,7 @@ export const POST = auth(async (req: any) => {
     slug: 'sample-name-' + Math.random(),
     image: '/images/shirt1.jpg',
     price: 0,
+    prevPrice: 0,
     category: 'sample category',
     brand: 'sample brand',
     countInStock: 0,

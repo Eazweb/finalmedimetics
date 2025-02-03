@@ -7,6 +7,8 @@ const productSchema = new mongoose.Schema(
     category: { type: String, required: true },
     image: { type: [String], required: true },
     price: { type: Number, required: true },
+    prevPrice: { type: Number, required: true },
+    modelLink: { type: String },
     brand: { type: String, required: true },
     rating: { type: Number, required: true, default: 0 },
     numReviews: { type: Number, required: true, default: 0 },
@@ -33,6 +35,8 @@ export type Product = {
   image: string[];
   banner?: string;
   price: number;
+  prevPrice:number;
+  modelLink?: string;
   brand: string;
   description: string;
   category: string;

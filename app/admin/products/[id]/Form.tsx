@@ -63,6 +63,8 @@ export default function ProductEditForm({ productId }: { productId: string }) {
     setValue("name", product.name);
     setValue("slug", product.slug);
     setValue("price", product.price);
+    setValue("prevPrice", product.prevPrice);
+    setValue("modelLink", product.modelLink);
     setValue("image", product.image || []); // Handling multiple images
     setValue("category", product.category);
     setValue("brand", product.brand);
@@ -150,6 +152,8 @@ export default function ProductEditForm({ productId }: { productId: string }) {
           <FormInput name="Name" id="name" required />
           <FormInput name="Slug" id="slug" required />
           <FormInput name="Price" id="price" required />
+          <FormInput name="Prev Price" id="prevPrice" required />
+          <FormInput name="Model Link" id="modelLink" />
           <FormInput name="Category" id="category" required />
           <FormInput name="Brand" id="brand" required />
           <FormInput name="Description" id="description" required />

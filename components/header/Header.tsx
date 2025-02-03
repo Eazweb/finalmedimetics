@@ -13,20 +13,20 @@ const logoFont = Lilita_One({
 
 const Header = () => {
   return (
-    <header className="w-full md:px-[5%] bg-base-300">
+    <header className="w-full md:px-[5%]">
       <nav>
         <div className="navbar justify-between items-center ">
           <div>
-            <label htmlFor="my-drawer" className="btn btn-square btn-ghost">
+            <label htmlFor="my-drawer" className=" ">
               <MenuIcon />
             </label>
           </div>
           <Link
             href="/"
-            className={` ${logoFont.className} flex ml-5 text-2xl btn btn-ghost`}
+            className={` ${logoFont.className} flex ml-5 text-2xl `}
           >
             <Image
-              src="/headerlogo.png"
+              src="/logo.png"
               className=""
               width={80}
               height={80}

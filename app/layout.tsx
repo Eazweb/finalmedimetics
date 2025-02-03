@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Abel, Inter, Nunito, Sarabun } from "next/font/google";
+import { Abel, Inter, Maven_Pro, Montserrat, Nunito, Sarabun } from "next/font/google";
 import Providers from "@/components/Providers";
 import DrawerButton from "@/components/DrawerButton";
 import Sidebar from "@/components/Sidebar";
@@ -11,11 +11,14 @@ import Link from "next/link";
 
 const inter = Sarabun({ subsets: ["latin"], weight: ["400"] });
 
+const mainfont = Maven_Pro({ subsets: ["latin"], weight: ["400"] });
+
+
 export const metadata: Metadata = {
-  title: "Lift Lock",
-  description: "Modern ECommerce Website",
+  title: "Medimetics",
+  description: "Welcome Pretty faces",
   icons: {
-    icon: "/black-logo.png", // Path to your logo with a white background
+    icon: "/logo.png", // Path to your logo with a white background
   },
 };
 
@@ -26,7 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={mainfont.className}>
         <Providers>
           <div className="drawer">
             <DrawerButton />

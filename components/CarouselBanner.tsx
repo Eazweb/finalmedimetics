@@ -23,7 +23,7 @@ function AutoPlayMethods() {
   const banners = [Banner1, Banner2, Banner3]; // Array of images
 
   return (
-    <div className="slider-container gap-0 w-full  overflow-hidden">
+    <div className="slider-container gap-0 w-[90%] max-h-[500px] mx-auto py-10 rounded-xl overflow-hidden">
       <Slider ref={(slider: any) => (sliderRef = slider)} {...settings}>
         {banners.map((banner, index) => (
           <div

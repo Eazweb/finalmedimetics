@@ -18,10 +18,8 @@ const Footer = () => {
             </a>
             <div className="mt-6 lg:max-w-sm">
               <p className="text-sm text-gray-300">
-                At Lift Lock, we specialize in premium gym belts designed to
-                support and enhance your training sessions. Our belts are
-                crafted for durability, comfort, and performance, helping you
-                lift with confidence and reach your fitness goals.
+                At Medimetics, we specialize in skin care products that enhance your face's glow and fix minor skin problems. Our products are crafted with love, comfort, and hygiene, keeping your pretty face clean and glowing
+                
               </p>
               <p className="mt-4 text-sm text-gray-300">
                 Whether you're a seasoned lifter or just starting out, trust

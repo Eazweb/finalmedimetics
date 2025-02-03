@@ -1,56 +1,38 @@
-"use client";
-
-import { Product } from "@/lib/models/ProductModel";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { Star, ShoppingCart } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
+import { Product } from "@/lib/models/ProductModel";
 
-export default function ProductItem({ product }: { product: Product }) {
+type Props = {
+  product: Product;
+};
+
+export default function ProductItem({ product }: Props) {
   return (
-    <Card className="w-full max-w-sm overflow-hidden transition-all hover:shadow-lg">
-      <CardHeader className="p-0">
-        <div className="relative">
+    <div className="bg-white transition-shadow w-full max-w-[350px]  group">
+      <Link href={`/product/${product.slug}`}>
+        <div className="relative w-full aspect-square">
           <Image
             src={product.image[0]}
             alt={product.name}
-            className="w-full  object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-            height="400"
-            width="400"
-            style={{
-              aspectRatio: "400/400",
-              objectFit: "cover",
-            }}
+            fill
+            className="object-cover  rounded-2xl"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
-      </CardHeader>
-      <CardContent className="p-4">
-        <Link href={`/product/${product.slug}`}>
-          <h3 className="text-2xl font-semibold mb-2">
+      </Link>
+      <div className="py-4">
+      <Link href={`/product/${product.slug}`}>
+          <h3 className="text-xl mb-2 group-hover:text-green-400 transition-colors line-clamp-2">
             {product.name.toUpperCase()}
           </h3>
         </Link>
-        <div className="flex items-center justify-between mb-2">
-          <div className="flex gap-3 text-lg font-bold">
-            ₹{product.price} <h1 className="line-through">₹5500</h1>{" "}
+        <div className="flex items-center justify-between mb-2 ">
+          <div className="flex items-end gap-3 text-2xl font-bold">
+            ₹{product.price}
+            <span className="line-through text-lg ">₹{product.prevPrice}</span>
           </div>
           <div className="flex items-center">
-            {/* {[...Array(5)].map((_, i) => (
-              <Star
-                key={i}
-                className={`w-5 h-5 ${
-                  i < product.rating
-                    ? "text-yellow-400 fill-yellow-400"
-                    : "text-gray-300"
-                }`}
-              />
-            ))} */}
             <div className="flex gap-1 font-semibold text-lg items-center">
               5 <Star className="w-5 h-5 text-yellow-600 fill-yellow-500" />
             </div>
@@ -59,15 +41,13 @@ export default function ProductItem({ product }: { product: Product }) {
             </span>
           </div>
         </div>
-        <p className="text-sm text-gray-600 mb-4">{product.brand}</p>
-      </CardContent>
-      <Link href={`/product/${product.slug}`}>
-        <CardFooter className="p-4 pt-0">
-          <Button className="w-full">
-            <ShoppingCart className="mr-2 h-4 w-4" /> Add to Cart
-          </Button>
-        </CardFooter>
-      </Link>
-    </Card>
+        <p className="text-sm text-gray-600 mb-4 ">{product.brand}</p>
+        <Link href={`/product/${product.slug}`}>
+          <button className="w-full cartbutton text-white text-xl rounded-full duration-200 font-semibold py-4 flex items-center justify-center">
+            <ShoppingCart className="mr-2 h-6 w-6" /> Add to Cart
+          </button>
+        </Link>
+      </div>
+    </div>
   );
 }
