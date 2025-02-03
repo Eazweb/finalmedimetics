@@ -66,6 +66,7 @@ export const config = {
       const allowedOrigins = [
         process.env.NEXTAUTH_URL,
         process.env.SECONDARY_URL,
+        process.env.PRIMARY_URL,
         'http://localhost:3000'
       ]
       
