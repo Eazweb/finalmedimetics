@@ -36,7 +36,7 @@ export default async function Home() {
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 my-10">
-          {latestProducts.map((product) => (
+          {latestProducts.map((product:any) => (
             <ProductItem
               key={product.slug}
               product={convertDocToObj(product)}
