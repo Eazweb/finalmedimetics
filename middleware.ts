@@ -14,6 +14,19 @@ const authConfig = {
         /\/admin/,
       ]
       const { pathname } = request.nextUrl
+      
+      // Check if the request origin is allowed
+      const allowedOrigins = [
+        process.env.NEXTAUTH_URL,
+        process.env.SECONDARY_URL,
+        'http://localhost:3000'
+      ]
+      
+      const origin = request.headers.get('origin')
+      if (origin && !allowedOrigins.includes(origin)) {
+        return false
+      }
+
       if (protectedPaths.some((p) => p.test(pathname))) return !!auth
       return true
     },
@@ -24,13 +37,6 @@ export const { auth: middleware } = NextAuth(authConfig)
 
 export const config = {
   matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - api (API routes)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     */
     '/((?!api|_next/static|_next/image|favicon.ico).*)',
   ],
 }

@@ -62,7 +62,24 @@ export const config = {
       }
       return session
     },
+    async redirect({ url, baseUrl }:{ url: string, baseUrl: string }) {
+      const allowedOrigins = [
+        process.env.NEXTAUTH_URL,
+        process.env.SECONDARY_URL,
+        'http://localhost:3000'
+      ]
+      
+      if (url.startsWith('/')) return `${baseUrl}${url}`
+      
+      const urlOrigin = new URL(url).origin
+      if (allowedOrigins.includes(urlOrigin)) {
+        return url
+      }
+      
+      return baseUrl
+    }
   },
+  trustHost: true,
 }
 
 export const {
