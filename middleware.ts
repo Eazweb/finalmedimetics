@@ -36,11 +36,7 @@ const authConfig = {
 
 export const { auth: middleware } = NextAuth(authConfig);
 
-// Combined matcher configuration
 export const config = {
-  matcher: [
-    "/((?!api|_next/static|_next/image|favicon.ico).*)",
-    "/:path*", // Added for Edge Runtime
-  ],
-  runtime: "edge", // Specify Edge Runtime
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+  runtime: "experimental-edge", // Changed from 'edge' to 'experimental-edge'
 };
