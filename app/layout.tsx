@@ -1,6 +1,13 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Abel, Inter, Maven_Pro, Montserrat, Nunito, Sarabun } from "next/font/google";
+import {
+  Abel,
+  Inter,
+  Maven_Pro,
+  Montserrat,
+  Nunito,
+  Sarabun,
+} from "next/font/google";
 import Providers from "@/components/Providers";
 import DrawerButton from "@/components/DrawerButton";
 import Sidebar from "@/components/Sidebar";
@@ -13,6 +20,7 @@ const inter = Sarabun({ subsets: ["latin"], weight: ["400"] });
 
 const mainfont = Maven_Pro({ subsets: ["latin"], weight: ["400"] });
 
+export const runtime = "edge";
 
 export const metadata: Metadata = {
   title: "Medimetics",
