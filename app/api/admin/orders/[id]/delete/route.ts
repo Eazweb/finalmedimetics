@@ -2,7 +2,6 @@ import { auth } from '@/lib/auth';
 import dbConnect from '@/lib/dbConnect';
 import OrderModel from '@/lib/models/OrderModel';
 import { NextRequest } from 'next/server';
-export const runtime = 'edge';
 
 export async function DELETE(
   req: NextRequest,

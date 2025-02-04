@@ -1,8 +1,6 @@
 import { auth } from '@/lib/auth'
 import dbConnect from '@/lib/dbConnect'
 import OrderModel from '@/lib/models/OrderModel'
-export const runtime = 'edge';
-
 export const PUT = auth(async (...args: any) => {
   const [req, { params }] = args
   if (!req.auth || !req.auth.user?.isAdmin) {

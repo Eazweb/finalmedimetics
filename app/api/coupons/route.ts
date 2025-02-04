@@ -4,7 +4,6 @@ export const dynamic = "force-dynamic"; // Add this line
 import { NextRequest, NextResponse } from "next/server";
 import Coupon from "@/lib/models/CouponModel";
 import dbConnect from "@/lib/dbConnect";
-export const runtime = 'edge';
 
 export async function GET(request: NextRequest) {
   try {

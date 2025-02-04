@@ -2,7 +2,6 @@ import { auth } from '@/lib/auth'
 import dbConnect from '@/lib/dbConnect'
 import OrderModel from '@/lib/models/OrderModel'
 import { razorpay } from '@/lib/razorpay'
-export const runtime = 'edge';
 
 export const POST = auth(async (...request: any) => {
   const [req, { params }] = request

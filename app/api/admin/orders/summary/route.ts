@@ -3,7 +3,6 @@ import { auth } from "@/lib/auth";
 import OrderModel from "@/lib/models/OrderModel";
 import UserModel from "@/lib/models/UserModel";
 import ProductModel from "@/lib/models/ProductModel";
-export const runtime = 'edge';
 
 export const GET = auth(async (req: any) => {
   if (!req.auth || !req.auth.user?.isAdmin) {
