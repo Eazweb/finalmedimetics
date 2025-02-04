@@ -20,7 +20,6 @@ const inter = Sarabun({ subsets: ["latin"], weight: ["400"] });
 
 const mainfont = Maven_Pro({ subsets: ["latin"], weight: ["400"] });
 
-export const runtime = "edge";
 
 export const metadata: Metadata = {
   title: "Medimetics",
