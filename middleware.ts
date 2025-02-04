@@ -1,5 +1,8 @@
 import NextAuth from "next-auth";
 import type { NextAuthConfig } from "next-auth";
+import { NextResponse } from "next/server";
+
+export const runtime = "edge";
 
 const authConfig = {
   providers: [],
@@ -34,9 +37,25 @@ const authConfig = {
   },
 } satisfies NextAuthConfig;
 
-export const { auth: middleware } = NextAuth(authConfig);
+// Create auth middleware
+const { auth } = NextAuth(authConfig);
 
+// Export middleware function
+export default auth((req) => {
+  return NextResponse.next();
+});
+
+// Export config with updated matcher and runtime
 export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
-  runtime: "experimental-edge", // Changed from 'edge' to 'experimental-edge'
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - api (API routes)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     * - public folder
+     */
+    "/((?!api|_next/static|_next/image|favicon.ico|public/).*)",
+  ],
 };

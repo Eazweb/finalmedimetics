@@ -1,7 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    // This will apply the runtime configuration globally
+    runtime: 'edge',
+    // This ensures all pages use the edge runtime
+    serverComponents: {
+      defaultRuntime: 'edge',
+    },
+  },
   images: {
-    unoptimized: true, // For Cloudflare compatibility
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
