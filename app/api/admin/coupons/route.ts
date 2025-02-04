@@ -1,7 +1,6 @@
 import { auth } from "@/lib/auth";
 import dbConnect from "@/lib/dbConnect";
 import CouponModel from "@/lib/models/CouponModel";
-export const runtime = 'edge';
 
 export const GET = auth(async (req: any) => {
   if (!req.auth || !req.auth.user?.isAdmin) {
