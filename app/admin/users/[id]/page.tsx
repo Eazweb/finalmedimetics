@@ -1,6 +1,6 @@
 import AdminLayout from '@/components/admin/AdminLayout'
 import Form from './Form'
-
+export const runtime = 'edge';
 export function generateMetadata({ params }: { params: { id: string } }) {
   return {
     title: `Edit User ${params.id}`,

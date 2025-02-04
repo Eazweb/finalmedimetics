@@ -1,6 +1,6 @@
 import AdminLayout from '@/components/admin/AdminLayout'
 import Products from './Products'
-
+export const runtime = 'edge';
 export const metadata = {
   title: 'Admin Products',
 }

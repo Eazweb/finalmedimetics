@@ -1,6 +1,6 @@
 import AdminLayout from "@/components/admin/AdminLayout";
 import Coupons from "./Coupons";
-
+export const runtime = 'edge';
 export const metadata = {
   title: "Admin Coupons",
 };
