@@ -1,4 +1,5 @@
 import AdminLayout from "@/components/admin/AdminLayout";
+export const runtime = 'edge';
 
 export const metadata = {
   title: "Admin Dashboard",

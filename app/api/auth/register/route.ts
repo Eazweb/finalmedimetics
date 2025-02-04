@@ -2,6 +2,7 @@ import { NextRequest } from 'next/server'
 import bcrypt from 'bcryptjs'
 import dbConnect from '@/lib/dbConnect'
 import UserModel from '@/lib/models/UserModel'
+export const runtime = 'edge';
 
 export const POST = async (request: NextRequest) => {
   const { name, email, password } = await request.json()

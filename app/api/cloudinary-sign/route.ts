@@ -1,5 +1,6 @@
 import { auth } from "@/lib/auth";
 import cloudinary from "cloudinary";
+export const runtime = 'edge';
 
 export const POST = auth(async (req: any) => {
   const timestamp = Math.round(new Date().getTime() / 1000);

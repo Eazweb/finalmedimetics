@@ -1,6 +1,7 @@
 import { auth } from "@/lib/auth";
 import dbConnect from "@/lib/dbConnect";
 import CouponModel from "@/lib/models/CouponModel";
+export const runtime = 'edge';
 
 export const GET = auth(async (...args: any) => {
   const [req, { params }] = args;

@@ -3,6 +3,7 @@ import dbConnect from "@/lib/dbConnect";
 import OrderModel, { OrderItem } from "@/lib/models/OrderModel";
 import ProductModel from "@/lib/models/ProductModel";
 import { round2 } from "@/lib/utils1";
+export const runtime = 'edge';
 
 // Function to calculate prices
 const calcPrices = (orderItems: OrderItem[], discountAmount: number) => {
