@@ -2,7 +2,6 @@ import NextAuth from "next-auth";
 import type { NextAuthConfig } from "next-auth";
 import { NextResponse } from "next/server";
 
-export const runtime = "edge";
 
 const authConfig = {
   providers: [],
