@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    runtime: "edge", // Added edge runtime as default
-  },
   images: {
+    unoptimized: true, // For Cloudflare compatibility
     remotePatterns: [
       {
         protocol: "https",
@@ -34,26 +32,25 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: "/:path*",
+        source: '/:path*',
         headers: [
           {
-            key: "Access-Control-Allow-Origin",
-            value:
-              process.env.NODE_ENV === "production"
-                ? `${process.env.NEXTAUTH_URL}, ${process.env.SECONDARY_URL}, ${process.env.PRIMARY_URL}`
-                : "http://localhost:3000",
+            key: 'Access-Control-Allow-Origin',
+            value: process.env.NODE_ENV === 'production'
+              ? `${process.env.NEXTAUTH_URL}, ${process.env.SECONDARY_URL}, ${process.env.PRIMARY_URL}`
+              : 'http://localhost:3000',
           },
           {
-            key: "Access-Control-Allow-Credentials",
-            value: "true",
+            key: 'Access-Control-Allow-Credentials',
+            value: 'true',
           },
           {
-            key: "Access-Control-Allow-Methods",
-            value: "GET,DELETE,PATCH,POST,PUT",
+            key: 'Access-Control-Allow-Methods',
+            value: 'GET,DELETE,PATCH,POST,PUT',
           },
         ],
       },
-    ];
+    ]
   },
 };
 

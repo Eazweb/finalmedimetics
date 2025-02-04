@@ -1,5 +1,5 @@
-import NextAuth from 'next-auth'
-import type { NextAuthConfig } from 'next-auth'
+import NextAuth from "next-auth";
+import type { NextAuthConfig } from "next-auth";
 
 const authConfig = {
   providers: [],
@@ -12,32 +12,35 @@ const authConfig = {
         /\/profile/,
         /\/order\/(.*)/,
         /\/admin/,
-      ]
-      const { pathname } = request.nextUrl
-      
+      ];
+      const { pathname } = request.nextUrl;
+
       // Check if the request origin is allowed
       const allowedOrigins = [
         process.env.NEXTAUTH_URL,
         process.env.SECONDARY_URL,
         process.env.PRIMARY_URL,
-        'http://localhost:3000'
-      ]
-      
-      const origin = request.headers.get('origin')
+        "http://localhost:3000",
+      ];
+
+      const origin = request.headers.get("origin");
       if (origin && !allowedOrigins.includes(origin)) {
-        return false
+        return false;
       }
 
-      if (protectedPaths.some((p) => p.test(pathname))) return !!auth
-      return true
+      if (protectedPaths.some((p) => p.test(pathname))) return !!auth;
+      return true;
     },
   },
-} satisfies NextAuthConfig
+} satisfies NextAuthConfig;
 
-export const { auth: middleware } = NextAuth(authConfig)
+export const { auth: middleware } = NextAuth(authConfig);
 
+// Combined matcher configuration
 export const config = {
   matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+    "/((?!api|_next/static|_next/image|favicon.ico).*)",
+    "/:path*", // Added for Edge Runtime
   ],
-}
+  runtime: "edge", // Specify Edge Runtime
+};
